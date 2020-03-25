@@ -12,6 +12,7 @@
 		"@testing-library/user-event": "^7.1.2",
 		"axios": "^0.19.2",
 		"bootstrap": "^4.1.1",
+		"express": "^4.17.1",
 		"moment": "^2.24.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
@@ -29,7 +30,15 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [ ">0.2%", "not dead", "not op_mini all" ],
-		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
