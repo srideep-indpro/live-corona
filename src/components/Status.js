@@ -77,18 +77,25 @@ class Status extends Component {
 					<CardSubtitle>
 						As of <Moment format="DD/MM/YYYY HH:mm">{record_date}</Moment>
 					</CardSubtitle>
+
 					<CardText>
-						Total Cases:{' '}
-						<p style={{ color: 'orange' }}>
+						<p style={{ display: 'inline', fontSize: '18px' }}>Total Cases :</p>
+						<p style={{ color: 'orange', fontSize: '30px', display: 'inline' }}>
 							<b>{total_cases}</b>
 						</p>{' '}
-						Total Deaths :<p style={{ color: 'red' }}>
-							{' '}
-							<b>{total_deaths}</b>
-						</p>
-						Total Recovered :<p style={{ color: 'green' }}>
+					</CardText>
+					<CardText style={{ paddingTop: '0px' }}>
+						<p style={{ display: 'inline', fontSize: '18px' }}>Total Recovered :</p>
+						<p style={{ color: 'green', fontSize: '30px', display: 'inline' }}>
 							{' '}
 							<b>{total_recovered}</b>
+						</p>
+					</CardText>
+					<CardText>
+						<p style={{ display: 'inline', fontSize: '18px' }}>Total Deaths :</p>
+						<p style={{ color: '#B12608', fontSize: '30px', display: 'inline' }}>
+							{' '}
+							<b>{total_deaths}</b>
 						</p>
 					</CardText>
 				</CardBody>
