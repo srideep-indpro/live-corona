@@ -2,7 +2,7 @@
 	"name": "india_corona_tracker",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://mycountry-corona-tracker.herokuapp.com/",
+	"homepage": "http://srideep-indpro.github.io/India-corona-tracker}",
 	"engines": {
 		"npm": "6.4.1",
 		"node": "10.15.0"
@@ -25,7 +25,9 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -33,5 +35,8 @@
 	"browserslist": {
 		"production": [ ">0.2%", "not dead", "not op_mini all" ],
 		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+	},
+	"devDependencies": {
+		"gh-pages": "^2.2.0"
 	}
 }
