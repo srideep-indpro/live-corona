@@ -2,6 +2,7 @@
 	"name": "india_corona_tracker",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://mycountry-corona-tracker.herokuapp.com/",
 	"engines": {
 		"npm": "6.4.1",
 		"node": "10.15.0"
@@ -30,15 +31,7 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [ ">0.2%", "not dead", "not op_mini all" ],
+		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
 	}
 }
