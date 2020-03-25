@@ -68,9 +68,10 @@ class Status extends Component {
 	}
 
 	render() {
-		const { total_cases, new_cases, total_deaths, record_date } = this.state.liveData;
+		// console.log(this.state.liveData);
+		const { total_cases, total_recovered, total_deaths, record_date } = this.state.liveData;
 		return (
-			<Card body inverse color="info">
+			<Card body inverse color="info" style={{ height: '300px', width: '300px' }}>
 				<CardBody>
 					<CardTitle>INDIA</CardTitle>
 					<CardSubtitle>
@@ -84,6 +85,10 @@ class Status extends Component {
 						Total Deaths :<p style={{ color: 'red' }}>
 							{' '}
 							<b>{total_deaths}</b>
+						</p>
+						Total Recovered :<p style={{ color: 'green' }}>
+							{' '}
+							<b>{total_recovered}</b>
 						</p>
 					</CardText>
 				</CardBody>
