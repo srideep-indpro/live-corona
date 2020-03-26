@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardText, CardBody, CardTitle, CardSubtitle, CardDeck, Row, Col, CardHeader } from 'reactstrap';
+import { Card, CardText, CardBody, Row, Col } from 'reactstrap';
 import Moment from 'react-moment';
 import axios from 'axios';
 
