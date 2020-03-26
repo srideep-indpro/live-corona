@@ -5,6 +5,7 @@ import 'font-awesome/css/font-awesome.css';
 import AppNavbar from './components/AppNavbar';
 import Status from './components/Status';
 import { Container } from 'reactstrap';
+import Footer from './components/Footer';
 
 class App extends Component {
 	render() {
@@ -14,6 +15,7 @@ class App extends Component {
 				<Container style={{ margin: '80px' }}>
 					<Status />
 				</Container>
+				<Footer />
 			</div>
 		);
 	}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, CardSubtitle, CardDeck, Row, Col, CardHeader } from 'reactstrap';
 import Moment from 'react-moment';
 import axios from 'axios';
 
@@ -68,38 +68,92 @@ class Status extends Component {
 	}
 
 	render() {
-		// console.log(this.state.liveData);
-		const { total_cases, total_recovered, total_deaths, record_date } = this.state.liveData;
+		//console.log(this.state.liveData);
+		const {
+			total_cases,
+			total_recovered,
+			total_deaths,
+			record_date,
+			active_cases,
+			new_cases
+		} = this.state.liveData;
 		return (
-			<Card body inverse color="info" style={{ height: '300px', width: '300px' }}>
-				<CardBody>
-					<CardTitle>INDIA</CardTitle>
-					<CardSubtitle>
-						As of <Moment format="DD/MM/YYYY HH:mm">{record_date}</Moment>
-					</CardSubtitle>
+			<Row>
+				<Col sm="12" style={{ marginBottom: '20px' }}>
+					<span style={{ fontSize: '20px', color: 'blue', float: 'left' }}>
+						<b>
+							INDIA (as of <Moment format="DD/MM/YYYY HH:mm">{record_date}</Moment>)
+						</b>
+					</span>
 
-					<CardText>
-						<p style={{ display: 'inline', fontSize: '18px' }}>Total Cases :</p>
-						<p style={{ color: 'orange', fontSize: '30px', display: 'inline' }}>
-							<b>{total_cases}</b>
-						</p>{' '}
-					</CardText>
-					<CardText style={{ paddingTop: '0px' }}>
-						<p style={{ display: 'inline', fontSize: '18px' }}>Total Recovered :</p>
-						<p style={{ color: 'green', fontSize: '30px', display: 'inline' }}>
-							{' '}
-							<b>{total_recovered}</b>
-						</p>
-					</CardText>
-					<CardText>
-						<p style={{ display: 'inline', fontSize: '18px' }}>Total Deaths :</p>
-						<p style={{ color: '#B12608', fontSize: '30px', display: 'inline' }}>
-							{' '}
-							<b>{total_deaths}</b>
-						</p>
-					</CardText>
-				</CardBody>
-			</Card>
+					{/* as of <Moment format="DD/MM/YYYY HH:mm">{record_date}</Moment> */}
+				</Col>
+				<Col sm="3" md="3" xs="4">
+					<Card body inverse color="info" style={{ height: '200px', width: '200px' }}>
+						<CardBody>
+							<CardText>
+								<p style={{ fontSize: '18px' }}>Cases #</p>
+								<p style={{ color: 'orange', fontSize: '30px' }}>
+									{' '}
+									<b>{total_cases}</b>
+								</p>
+							</CardText>
+						</CardBody>
+					</Card>
+				</Col>
+				<Col sm="3" md="3" xs="4">
+					<Card body inverse color="success" style={{ height: '200px', width: '200px' }}>
+						<CardBody>
+							<CardText>
+								<p style={{ fontSize: '18px' }}>Recovered #</p>
+								<p style={{ color: 'orange', fontSize: '30px' }}>
+									{' '}
+									<b>{total_recovered}</b>
+								</p>
+							</CardText>
+						</CardBody>
+					</Card>
+				</Col>
+				<Col sm="3" md="3" xs="4">
+					<Card body inverse color="danger" style={{ height: '200px', width: '200px' }}>
+						<CardBody>
+							<CardText>
+								<p style={{ fontSize: '18px' }}>Deaths #</p>
+								<p style={{ color: 'orange', fontSize: '30px' }}>
+									{' '}
+									<b>{total_deaths}</b>
+								</p>
+							</CardText>
+						</CardBody>
+					</Card>
+				</Col>
+				<Col sm="3" md="3" xs="4">
+					<Card body inverse color="warning" style={{ height: '200px', width: '200px' }}>
+						<CardBody>
+							<CardText>
+								<p style={{ fontSize: '18px' }}>New #</p>
+								<p style={{ color: 'blue', fontSize: '30px' }}>
+									{' '}
+									<b>{new_cases}</b>
+								</p>
+							</CardText>
+						</CardBody>
+					</Card>
+				</Col>
+				<Col sm="3" md="3" xs="4">
+					<Card body inverse color="primary" style={{ height: '200px', width: '200px', marginTop: '20px' }}>
+						<CardBody>
+							<CardText>
+								<p style={{ fontSize: '18px' }}>Active #</p>
+								<p style={{ color: 'orange', fontSize: '30px' }}>
+									{' '}
+									<b>{active_cases}</b>
+								</p>
+							</CardText>
+						</CardBody>
+					</Card>
+				</Col>
+			</Row>
 		);
 	}
 }
