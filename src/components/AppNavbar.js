@@ -18,7 +18,7 @@ class AppNavbar extends Component {
 				<Navbar color="dark" dark expand="sm" className="mb-5">
 					<Container>
 						<NavbarBrand href="/" style={{}}>
-							<i className="fa fa-line-chart" /> &nbsp; Corona Tracker
+							<i className="fa fa-line-chart" /> &nbsp; India Corona Tracker
 						</NavbarBrand>
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>

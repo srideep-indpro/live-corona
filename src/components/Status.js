@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardText, CardBody, Row, Col } from 'reactstrap';
+import Spinner from '../Spinner';
 import Moment from 'react-moment';
 import axios from 'axios';
 
@@ -68,7 +69,7 @@ class Status extends Component {
 	}
 
 	render() {
-		//console.log(this.state.liveData);
+		let liveDataCount = Object.keys(this.state.liveData).length;
 		const {
 			total_cases,
 			total_recovered,
@@ -77,77 +78,76 @@ class Status extends Component {
 			active_cases,
 			new_cases
 		} = this.state.liveData;
+
 		return (
 			<Row>
-				<Col sm="12" style={{ marginBottom: '20px' }}>
-					<span style={{ fontSize: '20px', color: 'blue', float: 'left' }}>
+				<Col sm="12" md="12" xs="12" style={{ marginBottom: '20px' }}>
+					<span style={{ fontSize: '15px', float: 'left' }}>
 						<b>
-							INDIA (as of <Moment format="DD/MM/YYYY HH:mm">{record_date}</Moment>)
+							Last updated: <Moment format="DD/MM/YYYY HH:mm">{record_date}</Moment>
 						</b>
 					</span>
-
-					{/* as of <Moment format="DD/MM/YYYY HH:mm">{record_date}</Moment> */}
 				</Col>
 				<Col sm="3" md="3" xs="4">
-					<Card body inverse color="info" style={{ height: '200px', width: '200px' }}>
+					<Card body inverse color="info">
 						<CardBody>
 							<CardText>
-								<p style={{ fontSize: '18px' }}>Cases #</p>
-								<p style={{ color: 'orange', fontSize: '30px' }}>
+								<p style={{ fontSize: '18px' }}>Cases</p>
+								<p style={{ fontSize: '30px' }}>
 									{' '}
-									<b>{total_cases}</b>
+									<b>{total_cases ? total_cases : <Spinner />}</b>
 								</p>
 							</CardText>
 						</CardBody>
 					</Card>
 				</Col>
 				<Col sm="3" md="3" xs="4">
-					<Card body inverse color="success" style={{ height: '200px', width: '200px' }}>
+					<Card body inverse color="success">
 						<CardBody>
 							<CardText>
-								<p style={{ fontSize: '18px' }}>Recovered #</p>
-								<p style={{ color: 'orange', fontSize: '30px' }}>
+								<p style={{ fontSize: '18px' }}>Recovered</p>
+								<p style={{ fontSize: '30px' }}>
 									{' '}
-									<b>{total_recovered}</b>
+									<b>{total_recovered ? total_recovered : <Spinner />}</b>
 								</p>
 							</CardText>
 						</CardBody>
 					</Card>
 				</Col>
 				<Col sm="3" md="3" xs="4">
-					<Card body inverse color="danger" style={{ height: '200px', width: '200px' }}>
+					<Card body inverse color="danger">
 						<CardBody>
 							<CardText>
-								<p style={{ fontSize: '18px' }}>Deaths #</p>
-								<p style={{ color: 'orange', fontSize: '30px' }}>
+								<p style={{ fontSize: '18px' }}>Deaths</p>
+								<p style={{ fontSize: '30px' }}>
 									{' '}
-									<b>{total_deaths}</b>
+									<b>{total_deaths ? total_deaths : <Spinner />}</b>
 								</p>
 							</CardText>
 						</CardBody>
 					</Card>
 				</Col>
 				<Col sm="3" md="3" xs="4">
-					<Card body inverse color="warning" style={{ height: '200px', width: '200px' }}>
+					<Card body inverse color="warning">
 						<CardBody>
 							<CardText>
-								<p style={{ fontSize: '18px' }}>New #</p>
-								<p style={{ color: 'blue', fontSize: '30px' }}>
+								<p style={{ fontSize: '18px' }}>New</p>
+								<p style={{ fontSize: '30px' }}>
 									{' '}
-									<b>{new_cases}</b>
+									<b>{new_cases ? new_cases : <Spinner />}</b>
 								</p>
 							</CardText>
 						</CardBody>
 					</Card>
 				</Col>
-				<Col sm="3" md="3" xs="4">
-					<Card body inverse color="primary" style={{ height: '200px', width: '200px', marginTop: '20px' }}>
+				<Col sm="3" md="3" xs="4" style={{ marginTop: '25px' }}>
+					<Card body inverse color="primary">
 						<CardBody>
 							<CardText>
-								<p style={{ fontSize: '18px' }}>Active #</p>
-								<p style={{ color: 'orange', fontSize: '30px' }}>
+								<p style={{ fontSize: '18px' }}>Active</p>
+								<p style={{ fontSize: '30px' }}>
 									{' '}
-									<b>{active_cases}</b>
+									<b>{active_cases ? active_cases : <Spinner />}</b>
 								</p>
 							</CardText>
 						</CardBody>
