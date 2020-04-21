@@ -56,7 +56,6 @@ class Status extends Component {
 					let maxElem = response.data.stat_by_country.length;
 					let liveData = response.data.stat_by_country[maxElem - 1];
 					this.setState({ liveData, loading: false });
-					//console.log(this.state.liveData);
 				})
 				.catch((error) => {
 					console.log(error);
