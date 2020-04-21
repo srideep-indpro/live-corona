@@ -106,7 +106,7 @@ class Status extends Component {
 					</Col>
 				</Row>
 				<Row gutter={24} style={{ marginTop: '20px' }}>
-					<Col span={6}>
+					<Col span={12}>
 						<Card title="Active" bordered={false}>
 							<p style={{ fontSize: '30px', color: '#0591FB' }}>
 								{' '}
@@ -114,7 +114,7 @@ class Status extends Component {
 							</p>
 						</Card>
 					</Col>
-					<Col span={6}>
+					<Col span={12}>
 						<Card title="New" bordered={false}>
 							<p style={{ fontSize: '30px', color: '#FBD905' }}>
 								{' '}
@@ -122,7 +122,9 @@ class Status extends Component {
 							</p>
 						</Card>
 					</Col>
-					<Col span={6}>
+				</Row>
+				<Row gutter={24} style={{ marginTop: '10px' }}>
+					<Col span={12}>
 						<Card title="Recovered" bordered={false}>
 							<p style={{ fontSize: '30px', color: '#8CFB05', display: 'inline' }}>
 								{' '}
@@ -131,7 +133,7 @@ class Status extends Component {
 							</p>
 						</Card>
 					</Col>
-					<Col span={6}>
+					<Col span={12}>
 						<Card title="Deaths" bordered={false}>
 							<p style={{ fontSize: '30px', color: '#FB0C05', display: 'inline' }}>
 								{' '}
