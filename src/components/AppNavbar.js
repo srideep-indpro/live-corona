@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, Container } from 'reactstrap';
+import { Menu } from 'antd';
 
 class AppNavbar extends Component {
 	state = {
@@ -15,23 +15,13 @@ class AppNavbar extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar color="dark" dark expand="sm" className="mb-5">
-					<Container>
-						<NavbarBrand href="/" style={{}}>
-							<i className="fa fa-line-chart" /> &nbsp; India Corona Tracker
-						</NavbarBrand>
-						<NavbarToggler onClick={this.toggle} />
-						<Collapse isOpen={this.state.isOpen} navbar>
-							<Nav className="ml-auto" navbar>
-								{/* <NavItem>
-                  <NavLink href="https://github.com/bradtraversy/mern_shopping_list">
-                    Github Repo
-                  </NavLink>
-                </NavItem> */}
-							</Nav>
-						</Collapse>
-					</Container>
-				</Navbar>
+				<Menu mode="horizontal" theme="dark">
+					<Menu.Item key="github">
+						<span style={{ fontSize: '25px' }}>
+							<i className="fa fa-line-chart" /> &nbsp; <a href="/">India Corona Tracker</a>
+						</span>
+					</Menu.Item>
+				</Menu>
 			</div>
 		);
 	}
