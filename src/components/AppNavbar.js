@@ -18,7 +18,7 @@ class AppNavbar extends Component {
 				<Menu mode="horizontal" theme="dark">
 					<Menu.Item key="github">
 						<span style={{ fontSize: '25px' }}>
-							<i className="fa fa-line-chart" /> &nbsp; <a href="/">India Corona Tracker</a>
+							<i className="fa fa-line-chart" /> &nbsp; <a href="/live-corona">India Corona Tracker</a>
 						</span>
 					</Menu.Item>
 				</Menu>
