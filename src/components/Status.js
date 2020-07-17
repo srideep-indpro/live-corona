@@ -16,28 +16,6 @@ class Status extends Component {
 	}
 
 	componentDidMount() {
-		setTimeout(() => {
-			axios({
-				method: 'GET',
-				url: 'https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php',
-				headers: {
-					'content-type': 'application/octet-stream',
-					'x-rapidapi-host': 'coronavirus-monitor.p.rapidapi.com',
-					'x-rapidapi-key': '166fcdaa89mshb7338a5af2cf6f8p155c53jsn54f7d7c45dfc'
-				},
-				params: {
-					country: 'India'
-				}
-			})
-				.then((response) => {
-					let liveData = response.data.latest_stat_by_country[0];
-					this.setState({ liveData, loading: false });
-				})
-				.catch((error) => {
-					console.log(error);
-				});
-		}, 10000);
-
 		this.interval = setInterval(() => {
 			axios({
 				method: 'GET',
@@ -75,10 +53,11 @@ class Status extends Component {
 			active_cases,
 			new_cases
 		} = this.state.liveData;
+
 		if (total_cases !== undefined && total_deaths !== undefined) {
-			let total = parseInt(total_cases.replace(',', ''));
-			let deaths = parseInt(total_deaths.replace(',', ''));
-			let recovered = parseInt(total_recovered.replace(',', ''));
+			let total = parseInt(total_cases.replace(/,/g, ''));
+			let deaths = parseInt(total_deaths.replace(/,/g, ''));
+			let recovered = parseInt(total_recovered.replace(/,/g, ''));
 			let deathRatio = deaths / total;
 			let recoveredRatio = recovered / total;
 			deathPercent = (deathRatio * 100).toFixed(2);

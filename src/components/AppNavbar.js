@@ -2,16 +2,6 @@ import React, { Component } from 'react';
 import { Menu } from 'antd';
 
 class AppNavbar extends Component {
-	state = {
-		isOpen: false
-	};
-
-	toggle = () => {
-		this.setState({
-			isOpen: !this.state.isOpen
-		});
-	};
-
 	render() {
 		return (
 			<div>
